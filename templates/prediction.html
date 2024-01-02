@@ -1,0 +1,70 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <!-- Add the following line to include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+</body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CV Analyzer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('upload_cv') }}">Predict Job Category</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('job_vacancies') }}">View Job Vacancies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Prediction:</h2>
+            <div class="alert alert-primary" role="alert">
+                <h3>{{ predicted_category_name }}</h3>
+            </div>
+            <h2>Recommended Skills:</h2>
+            {% for skill in skills %}
+            <p>{{ skill|safe }}</p>
+            {% endfor %}
+            <h2>Resume Score:</h2>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: {{ score }}%" aria-valuenow="{{ score }}" aria-valuemin="0" aria-valuemax="100">{{ score }}%</div>
+            </div>
+            <h2>Entities:</h2>
+            {% for entity in entities %}
+            <p>{{ entity }}</p>
+            {% endfor %}
+            <h2>Email:</h2>
+            <p>{{ email }}</p>
+            <h2>URL:</h2>
+            <p>{{ url }}</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Resume:</h2>
+            <a class="nav-link" href="{{ url_for('view_pdf') }}">View Pdf</a>
+        
+            <iframe scrolling="no" src="http://127.0.0.1:5000/view_pdf" style="border: 0px none; margin-left: 0px; height: 100%; margin-top: 0px; width: 100%;"></iframe>
+            <h2>Employment Info:</h2>
+            {% for employment in employment_info %}
+            <p>{{ employment }}</p>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+
+
+</body>

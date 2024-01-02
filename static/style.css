@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.ttf') format('truetype');
+}
+
+  body {
+    background-color: #165486e5;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.form-box {
+    margin-left: 50px;
+}

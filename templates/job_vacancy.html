@@ -1,0 +1,69 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Vacancies</title>
+  <!-- Add the following line to include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CV Analyzer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('upload_cv') }}">Predict Job Category</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('job_vacancies') }}">View Job Vacancies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% block content %}
+<div class="container">
+  <h1 class="mt-4 mb-4">Job Vacancies</h1>
+  {% if vacancies %}
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th scope="col" style="width: 30%;">Check Eligibility</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for vacancy in vacancies %}
+      <tr>
+        <td>{{ vacancy['title'] }}</td>
+        <td>{{ vacancy['description'] }}</td>
+        <td>{{ vacancy['location'] }}</td>
+        <td>
+          <form action="{{ url_for('check_eligibility', vacancy_id=vacancy._id) }}" method="POST" enctype="multipart/form-data">
+            <div class="form-group row">
+              <label for="name" class="col-sm-3 col-form-label">Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control form-control-sm" id="name" name="name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cv_file_{{ vacancy._id }}">Upload CV:</label>
+              <input type="file" class="form-control-file" id="cv_file_{{ vacancy._id }}" name="cv_file" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Check Eligibility</button>
+          </form>   
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No job vacancies available.</p>
+  {% endif %}
+</div>
+{% endblock %}

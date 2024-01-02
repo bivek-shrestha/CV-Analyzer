@@ -1,0 +1,52 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <!-- Add the following line to include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">CV Analyzer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('upload_cv') }}">Upload Your CV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('job_vacancies') }}">View Job Vacancies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="mt-4">
+      <div class="text-center">
+        <h4 class="mb-4">CV Similarity Check</h4>
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+  
+      <div class="text-center mt-3">
+        <p class="fw-bold fs-5">The similarity percentage between your CV and the job requirements is:</p>
+        <p class="display-1 fw-bold text-primary mb-4">{{ similarity*100 }}%</p>
+        <button id="apply-now-btn" class="btn btn-lg btn-primary animate__animated animate__bounce animate__infinite">Apply Now</button>
+      </div>
+    </div>
+  
+    <script>
+      // Add an event listener to the "Apply Now" button
+      document.getElementById("apply-now-btn").addEventListener("click", function() {
+        // Display a message
+        alert("Applied successfully!");
+      });
+    </script>
+  </body>
+  

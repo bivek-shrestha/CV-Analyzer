@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <!-- Add the following line to include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Prompt:wght@600&display=swap');
+      @font-face {
+      font-family: 'Poppins';
+      src: url('Poppins-Regular.ttf') format('truetype');
+  }
+  
+    body {
+      background-color: #165486e5;
+      font-family: 'Poppins', sans-serif;
+  
+  }
+  .btn {
+  display: inline-block;
+  background-color: #28537d;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 50px; /* make the button round */
+  font-size: 24px; /* increase the font size */
+  font-family: 'Kumbh Sans', sans-serif;
+  text-transform: uppercase; /* capitalize the text */
+  text-decoration: none; /* remove underline */
+  box-shadow: 0 0 10px #297dae; /* add a flashy effect */
+  transition: all 0.3s ease-in-out; /* add a smooth transition */
+}
+
+.btn:hover {
+  transform: scale(1.1); /* add a zoom-in effect on hover */
+  box-shadow: 0 0 20px #28537d; /* add a stronger flashy effect */
+}
+
+  h1{
+    font-family: 'Kumbh Sans', sans-serif;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 80px;
+
+  }
+h2{
+  font-size: 20px;
+  font-family: 'Kumbh Sans', sans-serif;
+    color: #fff;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">CV Analyzer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('upload_cv') }}">Predict Job Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('job_vacancies') }}">View Job Vacancies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+        
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <h1>Unlock the Power of Your CV with our Intelligent Analyzer</h1>
+      <h2 class="mt-4">Upload Your CV</h2>
+      <form action="{{ url_for('upload_cv') }}" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" name="cv" id="cv" class="form-control-file">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Predict Job Category</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <img src="https://png.pngtree.com/png-clipart/20190918/ourlarge/pngtree-pink-watercolor-brushes-171474-png-image_1733978.jpg" alt="Image Description" class="img-fluid">
+    </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Add the following line to include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

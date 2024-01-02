@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Job Vacancy</title>
+  <!-- Add the following line to include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CV Analyzer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('jobadmin') }}">View Job Vacancies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="display-4 text-center my-5">Post Job Vacancy</h1>
+    <form action="{{ url_for('admin') }}" method="POST">
+      <div class="form-group">
+        <label for="title">Job Title</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Job Description</label>
+        <textarea class="form-control" id="description" name="description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" name="location" required>
+      </div>
+      <form action="{{ url_for('jobadmin') }}" method="POST">
+        <input type="hidden" name="action" value="post_job_vacancy">
+        <!-- form fields here -->
+        <button type="submit" class="btn btn-primary">Post Job Vacancy</button>
+      </form>      
+    </form>
+  </div>
+
+  <!-- Add the following lines to include Bootstrap JavaScript and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

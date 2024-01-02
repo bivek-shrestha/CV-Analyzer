@@ -1,0 +1,57 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+  <!-- Add the following line to include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    ul {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CV Analyzer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('admin') }}">Post Job Vacancies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('login') }}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h1 class="display-4 text-center my-5">Job Vacancies</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Job Title</th>
+        <th scope="col">Job Description</th>
+        <th scope="col">Location</th>
+        <th scope="col" style="width: 40%;">Candidates Applied Ranking</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in vacancy_list %}
+      <tr>
+        <td>{{ v['title'] }}</td>
+        <td>{{ v['description'] }}</td>
+        <td>{{ v['location'] }}</td>
+        <td>
+          <ul>
+            {% for c in v['candidates']|sort(attribute='similarity', reverse=True) %}
+            <li>{{ loop.index }}. {{ c['name'] }} (Similarity: {{ c['similarity'] * 100 }}%)</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

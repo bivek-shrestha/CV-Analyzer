@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <title>Register</title>
+    <!-- Add the following line to include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('Poppins-Regular.ttf') format('truetype');
+  }
+  
+    body {
+      background-color: #165486e5;
+      font-family: 'Poppins', sans-serif;
+      color: #333333;
+  
+  }
+  .btn {
+    background-color: #28537d;
+    color: #fff;
+  }
+  
+  .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+  
+  .content {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      width: 60%;
+      height: 80%;
+
+  }
+  
+  .form-box {
+      width: 50%;
+      margin-right: 20px;
+      margin-top: 40px;
+  }
+  
+  .image-box {
+      width: 50%;
+  }
+  
+  </style>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="form-box">
+                {% if error %}
+                    <p style="color: red">{{ error }}</p>
+                {% endif %}
+                <form method="post">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" name="username" id="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input type="password" class="form-control" name="confirm_password" id="confirm_password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+                <p class="text-center mt-3"><a href="{{ url_for('login') }}">Login</a></p>
+            </div>
+            <div class="form-image">
+                <img src="https://thumbs.dreamstime.com/b/technology-women-cartoon-support-vector-illustration-graphic-design-135436495.jpg" width="400" height="400" alt="Registration Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
