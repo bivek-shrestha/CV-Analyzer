@@ -15,6 +15,77 @@ Eliminate human bias in the resume screening process. <br>
 Provide recruiters with insights and analytics about the resume pool. <br>
 Reviewing resume using Machine learning model <br>
 
+# Installation
+
+## Prerequisites
+
+Ensure you have the following installed before setting up the project:
+
+- Python 3.x
+- pip (Python package installer)
+- MongoDB installed and running
+- Git
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/bivek-shrestha/CV-Analyzer.git
+cd CV-Analyzer
+```
+
+### 2. Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+The `requirements.txt` file should contain the following dependencies:
+
+```plaintext
+Flask
+pymongo
+PyPDF2
+numpy
+regex
+scikit-learn
+bson
+joblib
+pandas
+spacy
+nltk
+uuid
+```
+
+### 3. Set Up MongoDB
+
+Make sure MongoDB is installed and running. Update the MongoDB connection string in your Flask app.
+
+### 4. Data Processing and Machine Learning
+
+If you are using machine learning components, follow the respective documentation:
+
+- scikit-learn: [Scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html)
+- spaCy: [spaCy Documentation](https://spacy.io/usage)
+- NLTK: [NLTK Documentation](https://www.nltk.org/)
+
+### 5. Flask Frontend
+
+Run the Flask app using the following commands:
+
+```bash
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask run
+```
+
+Visit `http://localhost:5000` in your web browser to access the application.
+
+## Acknowledgments
+
+
+
 # Methodology
 ## Data Collection 
 <img width="337" alt="Screenshot 2024-02-14 182220" src="https://github.com/bivek-shrestha/CV-Analyzer/assets/155466197/8e82d1b0-bd2d-4c14-b88f-abfb1d8763fa">
