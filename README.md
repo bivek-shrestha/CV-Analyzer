@@ -104,6 +104,7 @@ Cosine Similarity Algorithm <br>
 # Outputs:
 ## Login Page
 <img width="584" alt="login" src="https://github.com/bivek-shrestha/CV-Analyzer/assets/155466197/7d5d4aaf-d495-4470-80fe-0dea8d055cbc">
+
 ## USER
 ## UserPage
 <img width="599" alt="userpage" src="https://github.com/bivek-shrestha/CV-Analyzer/assets/155466197/36285708-108f-4fcc-bb1d-151e94e0ca5c">
@@ -115,7 +116,7 @@ Cosine Similarity Algorithm <br>
 
 <img width="597" alt="vacancypage" src="https://github.com/bivek-shrestha/CV-Analyzer/assets/155466197/871841d4-5947-4ec1-bf93-e280915ff134">
 
-# ADMIN
+## ADMIN
 
 ## Admin Job Post Page
 
