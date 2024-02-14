@@ -83,7 +83,7 @@ flask run
 Visit `http://localhost:5000` in your web browser to access the application.
 
 ## Acknowledgments
-
+I would like to thank our advisors for the proper guidance and support throughout the project. We would also convey deep gratitude to Prof. Lok Nath Regmi Prof. Bishal Dev Pandey from Infodevelopers for their help and support in this project. It would have been a very difficult path without their effort. I am indebted to our advisors without whom this project would not have been successful.
 
 
 # Methodology
@@ -94,11 +94,11 @@ Visit `http://localhost:5000` in your web browser to access the application.
 <img width="287" alt="Screenshot 2024-02-14 182322" src="https://github.com/bivek-shrestha/CV-Analyzer/assets/155466197/42b75934-e880-4b9a-a721-4599f168d619">
  <br>
 
-# Model Training
+## Model Training
 TF-IDF Vectorization,  <br>
 Cosine Similarity Algorithm <br>
 
-# Model Architecture
+## Model Architecture
 <img width="359" alt="Screenshot 2024-02-14 183059" src="https://github.com/bivek-shrestha/CV-Analyzer/assets/155466197/a9fe8b94-6c69-4f2e-8e7c-d73215bab2bb">
  
 # Outputs:
