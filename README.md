@@ -4,7 +4,7 @@
 The platform employs advanced Natural Language Processing (NLP) algorithms that analyze the candidate's CV and extract relevant information. <br>
 CV Analyzer helps job seekers understand their CV's strengths and weaknesses, providing them with valuable insights into their job application process. The platform identifies gaps in employment, lack of relevant skills, and other areas that require improvement. This allows job seekers to make necessary adjustments to their CV and improve their chances of landing their dream job. <br>
 For job administrators, CV Analyzer provides a powerful tool for posting job listings and ranking the best CVs based on the analysis provided by the tool. This makes the hiring process more efficient and effective, allowing employers to find the right candidate quickly. <br>
-The platform also provides job seekers with personalized suggestions to enhance their CV, such as highlighting the skills and experiences that match the job requirements. This allows job seekers to tailor their resumes to each job they apply for, making them more competitive and increasing their chances of success.
+The platform also provides job seekers with personalized suggestions to enhance their CV, such as highlighting the skills and experiences that match the job requirements. This allows job seekers to tailor their resumes to each job they apply for, making them more competitive and increasing their chances of success. <br>
 
 # Objectives
 Use CV to predict the most suitable job sectors for the candidate. <br>
